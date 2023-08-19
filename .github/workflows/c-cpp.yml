@@ -20,4 +20,4 @@ jobs:
 
     - name: Build with MSBuild for Mac
       run: |
-        msbuild TeslaDecrypter_vs2015.sln /p:Configuration=Release
+        msbuild TeslaDecrypter.sln /p:Configuration=Release
