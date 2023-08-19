@@ -15,11 +15,12 @@ jobs:
     - name: Manually Install Dependencies
       run: |
         # TODO: Add steps to manually download and install OpenSSL and vcredist2015
-
+  
     - name: Build with Visual Studio
       run: |
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S . -B build
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build build --config Release
+        cmd /c ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -S . -B build"
+        cmd /c ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build build --config Release"
+  
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
