@@ -16,10 +16,10 @@ jobs:
       run: |
         # TODO: Add steps to manually download and install OpenSSL and vcredist2015
   
-    - name: Build with Visual Studio
+    - name: Build with MSBuild
       run: |
-        cmd /c "cmake -S . -B build"
-        cmd /c "cmake --build build --config Release"
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TeslaDecrypter.sln /p:Configuration=Release
+
 
 
   
