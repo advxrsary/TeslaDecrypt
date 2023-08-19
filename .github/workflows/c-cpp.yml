@@ -12,10 +12,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install OpenSSL
+    - name: Manually Install Dependencies
       run: |
-        choco install openssl
-        echo "OPENSSLDIR=C:\Program Files\OpenSSL-Win64" >> $GITHUB_ENV
+        # TODO: Add steps to manually download and install OpenSSL and vcredist2015
 
     - name: Build with Visual Studio
       run: |
