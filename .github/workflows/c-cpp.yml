@@ -1,4 +1,4 @@
-name: Build TeslaDecrypt
+name: Build TeslaDecrypt on macOS
 
 on:
   push:
@@ -6,26 +6,18 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macOS-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Manually Install Dependencies
+    - name: Install Dependencies
       run: |
-        # TODO: Add steps to manually download and install OpenSSL and vcredist2015
-  
-    - name: Build with MSBuild
+        # Install dependencies using Homebrew or other methods
+        brew install openssl
+        # Add other dependencies as needed
+
+    - name: Build with MSBuild for Mac
       run: |
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" TeslaDecrypter.sln /p:Configuration=Release
-
-
-
-  
-
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: TeslaDecrypt-Binary
-        path: build/Release/*.exe
+        msbuild TeslaDecrypter_vs2015.sln /p:Configuration=Release
